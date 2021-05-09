@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar fixed app color="#3913B8">
+    <v-app-bar fixed app color="#1b233f">
       <v-toolbar-title v-text="title" class="color-vtt" />
       <v-spacer />
     </v-app-bar>
@@ -28,7 +28,7 @@ export default {
 
 <style lang="scss">
 .color-vtt {
-  color: #92b813;
+  color: #fff;
   font-weight: 600;
 }
 </style>
