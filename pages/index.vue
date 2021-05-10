@@ -22,18 +22,30 @@
         ></v-img>
       </v-carousel-item>
     </v-carousel>
-    <v-autocomplete
-      clearable
-      dense
-      rounded
-      solo-inverted
-      class="mb-5"
-      :items="pokemonList"
-      item-text="name"
-      v-model="value"
-      @keyup="toDetailPageFromSearch"
-      label="Search Pokemon and Press Enter"
-    ></v-autocomplete>
+    <v-col>
+      <v-autocomplete
+        clearable
+        dense
+        rounded
+        solo-inverted
+        class="mb-5"
+        :items="pokemonList"
+        item-text="name"
+        v-model="value"
+        @keyup="toDetailPageFromSearch"
+        label="Search Pokemon and Press Enter"
+      ></v-autocomplete>
+      <v-alert
+        v-if="isNotFound"
+        border="bottom"
+        color="red"
+        dense
+        outlined
+        prominent
+        type="error"
+        >Pokemon Not Found, Please Insert Valid Pokemon Name</v-alert
+      >
+    </v-col>
     <v-row justify="center" align="center">
       <PokemonCard
         v-for="pokemon in loadedPokemons"
@@ -62,6 +74,7 @@ export default {
       slides: ['First', 'Second', 'Third'],
       total: 20,
       value: '',
+      isNotFound: false,
     }
   },
   methods: {
@@ -79,6 +92,7 @@ export default {
           this.$router.push(`/pokemon/${pokemonData.url.split('/')[6]}`)
         } else {
           console.log('Not Exist')
+          this.isNotFound = true
         }
       }
     },

@@ -46,18 +46,14 @@ const createStore = () => {
         this.$axios
           .$get('/pokemon/' + id)
           .then((data) => {
-            // console.log(data)
             vuexContext.commit('setSelectedPokemon', data)
 
             return this.$axios.$get('/pokemon-species/' + id)
           })
           .then((data) => {
-            // console.log(data.evolution_chain.url)
             return this.$axios.$get(data.evolution_chain.url)
           })
           .then((data) => {
-            // console.log(data)
-
             evolution_chain.push(data.chain.species)
 
             if (data.chain.evolves_to.length === 0) {
