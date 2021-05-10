@@ -9,8 +9,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - pokemon-app-nw',
-    title: 'pokemon-app-nw',
+    titleTemplate: '%s - PokéLib',
+    title: 'PokéLib',
     htmlAttrs: {
       lang: 'en',
     },
@@ -44,7 +44,9 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: 'https://pokeapi.co/api/v2/',
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {

@@ -1,7 +1,9 @@
 <template>
   <v-app>
     <v-app-bar fixed app color="#1b233f">
-      <v-toolbar-title v-text="title" class="color-vtt" />
+      <nuxt-link to="/">
+        <v-toolbar-title v-text="title" class="color-vtt" />
+      </nuxt-link>
       <v-spacer />
     </v-app-bar>
     <v-main>
@@ -20,7 +22,7 @@ export default {
   data() {
     return {
       fixed: false,
-      title: 'Pokemon',
+      title: 'PokéLib',
     }
   },
 }
@@ -30,5 +32,9 @@ export default {
 .color-vtt {
   color: #fff;
   font-weight: 600;
+}
+
+a {
+  text-decoration: none;
 }
 </style>
