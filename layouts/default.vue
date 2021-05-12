@@ -23,8 +23,11 @@
         <nuxt />
       </v-container>
     </v-main>
-    <v-footer :absolute="!fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+    <v-footer :absolute="!fixed" app class="justify-center">
+      <span
+        >Created and Developed by Naufal W. &copy;
+        {{ new Date().getFullYear() }}</span
+      >
     </v-footer>
   </v-app>
 </template>

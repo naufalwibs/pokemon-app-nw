@@ -276,6 +276,11 @@ export default {
       return this.$route.params.id
     },
   },
+  head() {
+    return {
+      title: this.selectedPokemon.name,
+    }
+  },
   created() {
     this.$store.dispatch('setPokemon', this.$route.params.id)
   },

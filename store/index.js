@@ -82,6 +82,7 @@ const createStore = () => {
           })
           .catch((err) => {
             console.log(err)
+            this.$router.push('/error')
           })
       },
     },

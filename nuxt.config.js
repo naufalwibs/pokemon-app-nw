@@ -9,7 +9,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - PokéLib',
+    titleTemplate: '%s - Gotta read em all',
     title: 'PokéLib',
     htmlAttrs: {
       lang: 'en',

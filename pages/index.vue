@@ -2,7 +2,7 @@
   <v-container>
     <v-carousel
       cycle
-      height="400"
+      height="auto"
       hide-delimiter-background
       show-arrows-on-hover
       class="my-10"
@@ -10,9 +10,9 @@
       <v-carousel-item v-for="(banner, i) in banners" :key="i">
         <v-img
           class="rounded-xl"
-          lazy-src="https://picsum.photos/id/11/10/6"
+          :lazy-src="LazyLoading"
           width="100%"
-          height="400"
+          height="auto"
           :src="banners[i]"
         ></v-img>
       </v-carousel-item>
@@ -58,6 +58,10 @@
 
 <script>
 import PokemonCard from '@/components/PokemonCard'
+import Banner1 from '@/assets/banners/banner-pokemon-1.png'
+import Banner2 from '@/assets/banners/banner-pokemon-2.jpg'
+import Banner3 from '@/assets/banners/banner-pokemon-3.png'
+import LazyLoading from '@/assets/banners/lazy-loading-1.png'
 
 export default {
   components: {
@@ -65,14 +69,11 @@ export default {
   },
   data() {
     return {
-      banners: [
-        'https://pokemongamesharkcodes.files.wordpress.com/2016/09/banner-pokemon.png',
-        'https://pokemonrevolution.net/forum/uploads/monthly_2021_01/pokemon_play_pokemon_banner-02-2x.jpg.b76ae96fa2fca38a128c2a5483744e4f.jpg',
-        'https://www.ytgraphics.com/wp-content/uploads/2014/12/pokmeon.jpg',
-      ],
+      banners: [Banner1, Banner2, Banner3],
       total: 20,
       value: '',
       isNotFound: false,
+      LazyLoading,
     }
   },
   methods: {
