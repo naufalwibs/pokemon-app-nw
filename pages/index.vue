@@ -7,18 +7,13 @@
       show-arrows-on-hover
       class="my-10"
     >
-      <v-carousel-item v-for="(slide, i) in slides" :key="i">
-        <!-- <v-sheet :color="colors[i]" height="100%">
-          <v-row class="fill-height" align="center" justify="center">
-            <div class="display-3">{{ slide }} Slide</div>
-          </v-row>
-        </v-sheet> -->
+      <v-carousel-item v-for="(banner, i) in banners" :key="i">
         <v-img
           class="rounded-xl"
           lazy-src="https://picsum.photos/id/11/10/6"
           width="100%"
           height="400"
-          src="https://picsum.photos/id/11/500/300"
+          :src="banners[i]"
         ></v-img>
       </v-carousel-item>
     </v-carousel>
@@ -55,7 +50,7 @@
     </v-row>
     <v-col justify="center" align="center" class="pt-10">
       <v-btn @click="loadMore" color="secondary" elevation="7" large
-        >Load More</v-btn
+        >Load More Pokemons</v-btn
       >
     </v-col>
   </v-container>
@@ -70,8 +65,11 @@ export default {
   },
   data() {
     return {
-      colors: ['indigo', 'warning', 'pink darken-2'],
-      slides: ['First', 'Second', 'Third'],
+      banners: [
+        'https://pokemongamesharkcodes.files.wordpress.com/2016/09/banner-pokemon.png',
+        'https://pokemonrevolution.net/forum/uploads/monthly_2021_01/pokemon_play_pokemon_banner-02-2x.jpg.b76ae96fa2fca38a128c2a5483744e4f.jpg',
+        'https://www.ytgraphics.com/wp-content/uploads/2014/12/pokmeon.jpg',
+      ],
       total: 20,
       value: '',
       isNotFound: false,
@@ -91,7 +89,6 @@ export default {
         if (pokemonData) {
           this.$router.push(`/pokemon/${pokemonData.url.split('/')[6]}`)
         } else {
-          console.log('Not Exist')
           this.isNotFound = true
         }
       }
