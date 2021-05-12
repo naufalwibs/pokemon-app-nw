@@ -23,23 +23,22 @@ const createStore = () => {
       },
     },
     actions: {
+      // Set Pokemons For Main Page Loading
       setPokemons(vuexContext, total) {
-        // console.log(total)
         this.$axios
           .$get(`/pokemon?limit=${total}&offset=0`)
           .then((data) => {
-            // console.log(data)
             vuexContext.commit('setPokemons', data.results)
             return this.$axios.$get(`/pokemon?limit=${data.count}&offset=0`)
           })
           .then((data) => {
-            // console.log(data.results)
             vuexContext.commit('setPokemonList', data.results)
           })
           .catch((err) => {
             console.log(err)
           })
       },
+      // Set Pokemon For Selected Detail Page
       setPokemon(vuexContext, id) {
         const evolution_chain = []
 
@@ -56,16 +55,19 @@ const createStore = () => {
           .then((data) => {
             evolution_chain.push(data.chain.species)
 
+            // If First Evolution Exist
             if (data.chain.evolves_to.length === 0) {
               //   console.log('No Evolution')
             } else if (data.chain.evolves_to.length > 0) {
               evolution_chain.push(data.chain.evolves_to[0].species)
+              // If Second Evolution Exist
               if (data.chain.evolves_to[0].evolves_to.length === 0) {
                 // console.log('No Evolution')
               } else {
                 evolution_chain.push(
                   data.chain.evolves_to[0].evolves_to[0].species
                 )
+                // If Third Evolution Exist
                 if (
                   data.chain.evolves_to[0].evolves_to[0].evolves_to.length === 0
                 ) {

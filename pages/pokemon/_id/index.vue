@@ -5,6 +5,7 @@
         max-width="800"
         class="mx-auto mt-10 delay-pokemon-container-card"
       >
+        <!--------------- POKEMON CARD HEAD --------------->
         <v-app-bar dark color="#73694a">
           <v-col justify="center" align="center" class="justify-center">
             <h1 class="headline pl-5 poke-card">
@@ -18,6 +19,7 @@
           <v-row dense>
             <v-col cols="12">
               <v-card color="#1b353f" dark>
+                <!--------------- POKEMON NAME --------------->
                 <transition appear appear-active-class="animated jackInTheBox">
                   <v-card-title
                     class="text-h3 justify-center text-header delay-pokemon-title"
@@ -27,6 +29,7 @@
                 </transition>
                 <v-row>
                   <v-col cols="12" xl="6" md="6" sm="12" xs="12">
+                    <!--------------- POKEMON IMAGE --------------->
                     <transition appear appear-active-class="animated zoomInUp">
                       <v-col class="img-card-detail delay-pokemon-image">
                         <v-img
@@ -39,6 +42,7 @@
                     </transition>
                   </v-col>
                   <v-col cols="12" xl="6" md="6" sm="12" xs="12">
+                    <!--------------- POKEMON INFO --------------->
                     <v-col class="pokemon-info">
                       <v-col
                         justify="center"
@@ -57,6 +61,7 @@
                           </v-btn>
                         </transition>
                       </v-col>
+                      <!--------------- POKEMON INFO - BASE EXP --------------->
                       <transition
                         appear
                         appear-active-class="animated fadeInUp"
@@ -74,6 +79,7 @@
                           </v-col>
                         </v-row>
                       </transition>
+                      <!--------------- POKEMON INFO - HEIGHT --------------->
                       <transition
                         appear
                         appear-active-class="animated fadeInUp"
@@ -91,6 +97,7 @@
                           </v-col>
                         </v-row>
                       </transition>
+                      <!--------------- POKEMON INFO - WEIGHT --------------->
                       <transition
                         appear
                         appear-active-class="animated fadeInUp"
@@ -109,6 +116,7 @@
                         </v-row>
                       </transition>
                     </v-col>
+                    <!--------------- POKEMON TYPE --------------->
                     <v-col class="pokemon-type">
                       <v-col
                         justify="center"
@@ -154,6 +162,7 @@
                         </transition>
                       </v-col>
                     </v-col>
+                    <!--------------- POKEMON ABILITIES --------------->
                     <v-col class="pokemon-abilities">
                       <v-col
                         justify="center"
@@ -204,6 +213,7 @@
                   </v-col>
                 </v-row>
 
+                <!--------------- POKEMON EVOLUTION CHAIN --------------->
                 <v-col class="pokemon-evolution-container">
                   <v-col
                     justify="center"
